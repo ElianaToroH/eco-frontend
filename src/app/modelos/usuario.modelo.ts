@@ -3,4 +3,6 @@ export class ModeloUsuario{
     nombre?: string;
     correo?: string;
     nombreROl?: string; 
+    rolId?: string;
+    contrasena?: string;
 }
