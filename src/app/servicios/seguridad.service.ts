@@ -8,7 +8,7 @@ import { ModeloIdentificar } from '../modelos/identificar.modelo';
   providedIn: 'root'
 })
 export class SeguridadService {
-  url = 'http://localhost:3000'
+  url = 'https://ecosastreria-backend-mintic.herokuapp.com/'
   datosUsuarioEnSesion= new BehaviorSubject<ModeloIdentificar>(new ModeloIdentificar()); 
   constructor(private http: HttpClient) {this.VerificarSesionActual() }
   
@@ -71,7 +71,7 @@ export class SeguridadService {
  }
 
  CambiarClave(usuario: string): Observable<ModeloCambiarClave> {
-  return this.http.put<ModeloCambiarClave>(`${this.url}/cambiarComtrasena`, {
+  return this.http.put<ModeloCambiarClave>(`${this.url}/cambiarContrasena`, {
     usuario: usuario
   }, {
     headers: new HttpHeaders({
